@@ -3,6 +3,12 @@ import Quagga from 'quagga';
 import { Video } from './styles';
 
 function Main() {
+  const onDetected = (result) => {
+    Quagga.offDetected(onDetected);
+    const isbn = result.codeResult.code;
+    alert(isbn);
+  };
+
   useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       Quagga.init(
@@ -32,7 +38,8 @@ function Main() {
           }
           console.log('Initialization finished. Ready to start');
           Quagga.start();
-        }
+        },
+        Quagga.onDetected(onDetected)
       );
     }
   }, []);
