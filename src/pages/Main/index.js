@@ -1,12 +1,27 @@
 import React, { useEffect } from 'react';
 import Quagga from 'quagga';
 import { Video } from './styles';
+import { validateIsbn } from '../../services/books';
 
 function Main() {
+  let scannerAttemps = 0;
   const onDetected = (result) => {
     Quagga.offDetected(onDetected);
     const isbn = result.codeResult.code;
-    alert(isbn);
+    console.log(`Código lido: ${isbn}`);
+    if (validateIsbn(isbn)) {
+      alert(` ISBN válido ${isbn}`);
+      return;
+    } else {
+      if (scannerAttemps >= 5) {
+        alert(
+          'Não é possível ler o código do livro, por favor, tente novamente.'
+        );
+      }
+    }
+
+    scannerAttemps++;
+    Quagga.onDetected(onDetected);
   };
 
   useEffect(() => {
