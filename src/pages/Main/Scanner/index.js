@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Quagga from 'quagga';
-import { Video } from './styles';
+import { Video, Container, ScanMarker } from './styles';
 import { validateIsbn } from '../../../services/books';
 
 function Scanner() {
@@ -59,7 +59,30 @@ function Scanner() {
     }
   }, []);
 
-  return <Video id="Video" />;
+  return (
+    <>
+      <Video id="Video" />
+      <Container>
+        <ScanMarker>
+          <img
+            src="https://raw.githubusercontent.com/caarloshenrique/book-scan-pwa/master/book-scan-app/public/scan_marker.png"
+            alt="Marca para leitura do código"
+            width="260"
+            height="260"
+          />
+          <p className="label">Aponte para o código de barras do livro</p>
+        </ScanMarker>
+
+        <img
+          className="logo"
+          src="https://raw.githubusercontent.com/caarloshenrique/book-scan-pwa/master/book-scan-app/public/book.png"
+          alt="Book Icon"
+          width="69"
+          height="69"
+        />
+      </Container>
+    </>
+  );
 }
 
 export default Scanner;
