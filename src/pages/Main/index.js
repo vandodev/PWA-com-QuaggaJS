@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Scanner from './Scanner';
 
 function Main() {
-  return <Scanner />;
+  const [isbn, setIsbn] = useState();
+  return <Scanner onScan={setIsbn} />;
 }
 
 export default Main;
