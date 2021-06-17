@@ -22,7 +22,7 @@ function Results({ isbn }) {
       {book && (
         <Link to={`/book-details/${isbn}`}>
           <Wrapper>
-            <Cover src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR8V65yMtpQUrOnodqyw8rtANY4NIu26ywzF_yH37pCq4-MeJ6oqciPPYvKVH6vHV0WPSIkl1FqZ1dyhbPWKRQgz1lRR9a72c9udBPwOCvXgd0kdm5W5t-6aA&usqp=CAc" />
+            <Cover src={book.coverUrl} />
             <Info>
               <h4 className="name">{book.name}</h4>
               <div className="book-rating">
