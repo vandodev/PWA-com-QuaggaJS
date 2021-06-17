@@ -4,14 +4,21 @@ import PropTypes from 'prop-types';
 import { Container } from './styles';
 
 const GeneralScore = ({ book }) => {
+  const { color, label, recommended } = {
+    color: 'green',
+    label: 'Bom',
+    recommended: true,
+  };
   return (
-    <Container scoreColor={'green'}>
+    <Container scoreColor={color}>
       <div className="score">
-        <span className="summary-score-value">4.2</span>
-        <span>Bom</span>
+        <span className="summary-score-value">{book.score}</span>
+        <span>{label}</span>
       </div>
 
-      <p className="score-comment">Recomendado pelo editores</p>
+      {recommended && (
+        <p className="score-comment">Recomendado pelo editores</p>
+      )}
     </Container>
   );
 };
