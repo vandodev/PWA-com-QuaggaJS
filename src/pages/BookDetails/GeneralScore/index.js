@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 import { Container } from './styles';
 
+import { calculateScore } from '../../../services/books';
+
 const GeneralScore = ({ book }) => {
-  const { color, label, recommended } = {
-    color: 'green',
-    label: 'Bom',
-    recommended: true,
-  };
+  const { color, label, recommended } = calculateScore(book.score);
   return (
     <Container scoreColor={color}>
       <div className="score">
