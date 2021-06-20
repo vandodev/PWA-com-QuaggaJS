@@ -14,7 +14,10 @@
         { "name": "Códigos", "value": 4 },
         { "name": "Comunidade", "value": 5 },
         { "name": "Exemplos", "value": 4.9 }
-      ]
+      ],
+      "tecnologies": ["Java", "TDD", "Arquitetua"],
+      "requirements": ["Java"],
+      "description": "Mesmo um código ruim pode funcionar"
     }
   ]
 }

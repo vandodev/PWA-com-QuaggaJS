@@ -7,6 +7,7 @@ import { getBook } from '../../services/books';
 import Info from './info';
 import GeneralScore from './GeneralScore';
 import Scores from './Scores';
+import Extra from './Extra';
 
 function BookDetails() {
   const { isbn } = useParams();
@@ -27,6 +28,7 @@ function BookDetails() {
           <Info book={book} />
           <GeneralScore book={book} />
           <Scores book={book} />
+          <Extra book={book} />
         </Container>
       )}
     </>
