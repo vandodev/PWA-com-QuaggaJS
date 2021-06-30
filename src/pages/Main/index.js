@@ -3,11 +3,11 @@ import Scanner from './Scanner';
 import Results from './Results';
 
 function Main() {
-  const [isbn, setIsbn] = useState('9788576082675');
+  const [isbn, setIsbn] = useState();
   return (
     <>
-      {/* <Scanner onScan={setIsbn} /> */}
-      <Results isbn={isbn} />
+      <Scanner onScan={setIsbn} />
+      {isbn && <Results isbn={isbn} />}
     </>
   );
 }
