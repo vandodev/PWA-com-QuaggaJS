@@ -11,7 +11,7 @@ function Scanner({ onScan }) {
     const isbn = result.codeResult.code;
     console.log(`Código lido: ${isbn}`);
     if (validateIsbn(isbn)) {
-      alert(` ISBN válido ${isbn}`);
+      // alert(` ISBN válido ${isbn}`);
       onScan(isbn);
       return;
     } else {
